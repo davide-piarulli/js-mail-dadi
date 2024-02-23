@@ -17,10 +17,20 @@ if(verifica){
 } document.getElementById('mailUtente').innerHTML = 'Mi dispiace, non sei presente in lista';
 
 
- 
-
-
-
-
 
 // DADI
+
+
+document.getElementById('dpbtn').addEventListener("click", function () {
+  const numRandomUtente = Math.ceil(Math.random() * 6);
+  const numRandomPc = Math.ceil(Math.random() * 6);
+
+
+  if (numRandomPc < numRandomUtente) {
+    document.getElementById('output').innerHTML = 'utente vince ';
+  } else if (numRandomPc > numRandomUtente) {
+    document.getElementById('output').innerHTML = 'il PC vince';
+  } else {
+    document.getElementById('output').innerHTML = 'Questo è un pareggio';
+  }
+});
